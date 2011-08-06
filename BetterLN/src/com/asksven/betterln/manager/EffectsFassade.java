@@ -212,7 +212,7 @@ public class EffectsFassade
 	{
 		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(m_context);
 		
-		SensorFassade mySensor = new SensorFassade(m_context);
+		LightSensorFassade mySensor = new LightSensorFassade(m_context);
 		
 		boolean bEnabled = sharedPrefs.getBoolean("enable_bl", true);
 		boolean bOkLightSensor = sharedPrefs.getBoolean("disable_if_in_pocket", false) && mySensor.getDarkened();

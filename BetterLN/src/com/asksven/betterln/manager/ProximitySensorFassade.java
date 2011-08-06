@@ -29,30 +29,30 @@ import android.util.Log;
  * @author sven
  *
  */
-public class SensorFassade implements SensorEventListener
+public class ProximitySensorFassade implements SensorEventListener
 {
 
 	private final SensorManager mSensorManager;
 	private static String TAG = "SensorFassade";
-	private final Sensor m_lightSensor;
+	private final Sensor m_proximitySensor;
 	private final Context m_context;
 	
 	private static float THR_DARK = 200; 
 	float m_fCurrentLux = Float.MIN_VALUE;
 
-	public SensorFassade(Context context) 
+	public ProximitySensorFassade(Context context) 
 	{
 		m_context = context;
 	    mSensorManager = (SensorManager)context.getSystemService(context.SENSOR_SERVICE);
-	    m_lightSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-	    mSensorManager.registerListener((SensorEventListener) this, m_lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
+	    m_proximitySensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+	    mSensorManager.registerListener((SensorEventListener) this, m_proximitySensor, SensorManager.SENSOR_DELAY_NORMAL);
 	    Log.i(TAG, "registered Listener");
 }
 
 
 	public void onAccuracyChanged(Sensor sensor, int accuracy) 
 	{
-	    if(sensor.getType() == Sensor.TYPE_LIGHT)
+	    if(sensor.getType() == Sensor.TYPE_PROXIMITY)
 	    {
 	    }
 	}
@@ -65,7 +65,7 @@ public class SensorFassade implements SensorEventListener
 	    mSensorManager.unregisterListener((SensorEventListener) this);
 	    Log.i(TAG, "unregistered Listener");
 	    
-		if( event.sensor.getType() == Sensor.TYPE_LIGHT)
+		if( event.sensor.getType() == Sensor.TYPE_PROXIMITY)
 	    {
 			float[] vals;
 			vals = event.values;
@@ -77,7 +77,7 @@ public class SensorFassade implements SensorEventListener
 	 * returns true if the sensor is covered (e.g. in pocket or pouch)
 	 * @return true if sensor is covered
 	 */
-	public boolean getDarkened()
+	public boolean getCovered()
 	{
 		boolean bRet = false;
 		
