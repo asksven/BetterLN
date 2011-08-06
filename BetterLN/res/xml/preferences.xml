@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+	<CheckBoxPreference 
+		android:key="autostart"
+		android:summary="Automatically starts the service at boot"
+		android:title="On Boot" 
+		android:defaultValue="false"
+    />    
+
+	<CheckBoxPreference 
+		android:key="handle_sms"
+		android:summary="Applies a BLN for SMS"
+		android:title="Handle SMS" 
+		android:defaultValue="true"
+    />    
+
+	<CheckBoxPreference 
+		android:key="handle_call"
+		android:summary="Applies a BLN for incoming calls"
+		android:title="Handle CALL" 
+		android:defaultValue="true"
+    />    
+
+	<CheckBoxPreference 
+		android:key="handle_mail"
+		android:summary="Applies a BLN for mail (K9-Mail)"
+		android:title="Handle Mail" 
+		android:defaultValue="true"
+    />    
+
+	<CheckBoxPreference 
+		android:key="handle_im"
+		android:summary="Applies a BLN for IM (XtremePP)"
+		android:title="Handle IM" 
+		android:defaultValue="true"
+    />     
+
+	<CheckBoxPreference 
+		android:key="enable_bl"
+		android:summary="Enable/disable BLN"
+		android:title="Enable BLN" 
+		android:defaultValue="true"
+    />     
+
+	<CheckBoxPreference 
+		android:key="disable_if_in_pocket"
+		android:summary="Disable BLN when phone is in pocket/pouch"
+		android:title="Disable if in pocket" 
+		android:defaultValue="false"
+    />     
+
+	<CheckBoxPreference 
+		android:key="disable_if_upside_down"
+		android:summary="Disable BLN when phone is face down"
+		android:title="Disable if face down" 
+		android:defaultValue="false"
+    />     
+
+	<CheckBoxPreference 
+		android:key="disable_if_not_silent"
+		android:summary="Disable BLN when phone not on silence mode"
+		android:title="Disable if not slienced" 
+		android:defaultValue="false"
+    />     
+    
+	<CheckBoxPreference 
+		android:key="disable_if_notif_not_silenced"
+		android:summary="Disable BLN when notifications sound is not muted"
+		android:title="Disable if notifications are not muted" 
+		android:defaultValue="false"
+    />     
+
+</PreferenceScreen>

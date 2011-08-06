@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="app_name">LedEffects</string>
+    <string name="app_author">SvenK</string>
+    <string name="app_home"><a href="http://cri.ch/sven/ledeffects" rel="nofollow">http://cri.ch/sven/ledeffects</a></string>
+    <string name="app_credits">Graphic design by TheBrilliantMistake</string>
+    <string name="app_about">A service to manage LED effects in response to various events</string>
+    <string name="local_service_started">LedEffects started</string>
+    <string name="local_service_stopped">LedEffects stopped</string>
+    <string name="local_service_label">LedEffects</string>
+    <string name="local_service_connected">Connected</string>
+    <string name="local_service_disconnected">Disconnected</string>
+    <string name="local_service_updated">Update</string>
+</resources>
