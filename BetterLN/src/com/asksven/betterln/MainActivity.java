@@ -27,7 +27,8 @@ import android.view.SubMenu;
 import android.widget.Toast;
 
 import com.asksven.betterln.manager.EffectsFassade;
-import com.asksven.betterln.manager.SensorFassade;
+import com.asksven.betterln.manager.LightSensorFassade;
+import com.asksven.betterln.manager.ProximitySensorFassade;
 import com.asksven.betterln.R;
 
 /**
@@ -146,8 +147,10 @@ public class MainActivity extends Activity
    		}
    		else if (item.getTitle().equals("Sensors"))
    		{
-   			SensorFassade mySensor = new SensorFassade(this);
+   			LightSensorFassade mySensor = new LightSensorFassade(this);
    			mySensor.getDarkened();
+   			ProximitySensorFassade mySensor2 = new ProximitySensorFassade(this);
+   			mySensor2.getCovered();
    			return true;
    		}
 
