@@ -42,5 +42,7 @@
 	    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 	    <uses-permission android:name="android.permission.GET_TASKS" />
 	    <uses-permission android:name="android.permission.VIBRATE" />
+	    <!--  required for writing dump files -->
+    	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     
 </manifest>

@@ -19,6 +19,7 @@ package com.asksven.betterln.broadcast;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.asksven.android.common.utils.DataStorage;
 import com.asksven.betterln.EffectsService;
 import com.asksven.betterln.manager.EffectsFassade;
 
@@ -42,6 +43,7 @@ public class BroadcastHandler extends BroadcastReceiver
 	private static final String ACTION_MAIL 		= "com.fsck.k9.intent.action.EMAIL_RECEIVED";
 	private static final String ACTION_IM 			= "com.asksven.xtremepp.intent.action.MESSAGE_RECEIVED";
 	
+	
 	/* (non-Javadoc)
 	 * @see android.content.BroadcastReceiver#onReceive(android.content.Context, android.content.Intent)
 	 */
@@ -54,6 +56,7 @@ public class BroadcastHandler extends BroadcastReceiver
         if ((intent.getAction().equals(ACTION_MAIL)))
         {
         	Log.d(getClass().getSimpleName(), "Received Broadcast ACTION_MAIL");
+        	DataStorage.LogToFile(EffectsService.LOGFILE, "Received Broadcast ACTION_MAIL");
         	myEffectsMgr.notifyMail();
         }
         
@@ -61,6 +64,7 @@ public class BroadcastHandler extends BroadcastReceiver
         {
         	// todo: retrieve extras from Intent (from and message)
         	Log.d(getClass().getSimpleName(), "Received Broadcast ACTION_IM");
+        	DataStorage.LogToFile(EffectsService.LOGFILE, "Received Broadcast ACTION_IM");
         	
         	myEffectsMgr.notifyIM();
         }
@@ -85,6 +89,7 @@ public class BroadcastHandler extends BroadcastReceiver
 		if (intent.getAction().equals(ACTION_CALL))
 		{
 			Log.d(getClass().getSimpleName(), "Received Broadcast ACTION_CALL");
+			DataStorage.LogToFile(EffectsService.LOGFILE, "Received Broadcast ACTION_CALL");
 			String phoneState = intent.getExtras().getString("state");
 
 			

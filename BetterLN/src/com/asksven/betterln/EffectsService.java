@@ -46,6 +46,8 @@ public class EffectsService extends Service
 	/** A broadcast handler that is registered by code */
 	private PhoneOnOffHandler m_oScreenHandler = null;
 
+	/** The application's own logfile */
+	public static final String LOGFILE = "betterln.log";
 	
     /**
      * Class for clients to access.  Because we know this service always

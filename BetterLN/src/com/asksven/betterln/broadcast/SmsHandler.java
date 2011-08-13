@@ -23,6 +23,8 @@ package com.asksven.betterln.broadcast;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.asksven.android.common.utils.DataStorage;
+import com.asksven.betterln.EffectsService;
 import com.asksven.betterln.manager.EffectsFassade;
 
 import android.content.BroadcastReceiver;
@@ -50,6 +52,7 @@ public class SmsHandler extends BroadcastReceiver
         final EffectsFassade myEffectsMgr = EffectsFassade.getInstance(context);
         
 		Log.d(getClass().getSimpleName(), "Received Broadcast " + intent.getAction());
+		DataStorage.LogToFile(EffectsService.LOGFILE, "Received SMS Broadcast");
 		myEffectsMgr.notifySMS();
 	}
 }
